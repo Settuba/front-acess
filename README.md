@@ -50,7 +50,12 @@ Cada página possui:
 
 ## 🧑‍💻 Equipe - Team Egg
 
-- MEXER
+- Eduardo Augusto de Oliveira Souza
+RM: 565269
+- Gustavo Vieira de Matos
+RM: 563304
+- Gabriel Setúbal de Almeida
+RM: 563269
 
 ---
 
