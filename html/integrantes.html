@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrantes - Team EGG</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ajuda.html">Ajuda</a></li>
+      <li><a href="dicas.html">Dicas</a></li>
+      <li><a href="iniciar.html">Iniciar</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="integrantes.html" class="active">Integrantes</a></li>
+      <li><a href="solucao.html">Solução</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="content-box">
+    <h1>Integrantes do Time</h1>
+    <div class="team-members" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+      <div class="member" style="text-align: center;">
+        <img src="../img/eduardofoto.png" alt="Eduardo Augusto de Oliveira Souza" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" />
+        <h3>Eduardo Augusto de Oliveira Souza</h3>
+        <p>RM: 565269</p>
+      </div>
+      <div class="member" style="text-align: center;">
+        <img src="../img/gustavofoto.png" alt="Gustavo Vieira de Matos" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" />
+        <h3>Gustavo Vieira de Matos</h3>
+        <p>RM: 563304</p>
+      </div>
+      <div class="member" style="text-align: center;">
+        <img src="../img/gabrielfoto.png" alt="Gabriel Setúbal de Almeida" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" />
+        <h3>Gabriel Setúbal de Almeida</h3>
+        <p>RM: 563269</p>
+      </div>
+    </div>
+
+    <div class="navigation-buttons" style="margin-top: 30px; text-align: center;">
+      <button id="prevBtn">Anterior</button>
+      <button id="nextBtn">Próximo</button>
+    </div>
+  </div>
+</main>
+
+<div class="acessibilidade" style="text-align:center; margin: 20px 0;">
+  <button onclick="aumentarFonte()">Aumentar Fonte</button>
+  <button onclick="diminuirFonte()">Diminuir Fonte</button>
+  <button onclick="alternarContraste()">Alternar Contraste</button>
+</div>
+
+<footer>
+  <p>© 2025 Team EGG</p>
+</footer>
+
+<script src="../js/script.js"></script>
+
+<script>
+  const pages = [
+    'index.html',
+    'ajuda.html',
+    'dicas.html',
+    'iniciar.html',
+    'contato.html',
+    'faq.html',
+    'integrantes.html',
+    'solucao.html'
+  ];
+  const currentPage = window.location.pathname.split('/').pop();
+  let currentIndex = pages.indexOf(currentPage);
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) window.location.href = pages[currentIndex - 1];
+  });
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < pages.length - 1) window.location.href = pages[currentIndex + 1];
+  });
+
+  if (currentIndex === 0) prevBtn.disabled = true;
+  if (currentIndex === pages.length - 1) nextBtn.disabled = true;
+</script>
+
+</body>
+</html>

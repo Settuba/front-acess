@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - Team EGG</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ajuda.html">Ajuda</a></li>
+      <li><a href="dicas.html">Dicas</a></li>
+      <li><a href="iniciar.html">Iniciar</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="integrantes.html">Integrantes</a></li>
+      <li><a href="solucao.html">Solução</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="content-box">
+
+    <!-- Logo do Hospital das Clínicas -->
+    <div class="logo-container">
+      <img src="../img/logoHC.png" alt="Logo Hospital das Clínicas" class="logo-hc">
+    </div>
+
+    <h1>Bem-vindo ao Front Access</h1>
+    <p>Esta é a página inicial do nosso sistema para facilitar o acesso digital.</p>
+
+    <!-- Botões Navegação -->
+    <div class="navigation-buttons" style="margin-top: 20px;">
+      <button id="prevBtn">Anterior</button>
+      <button id="nextBtn">Próximo</button>
+    </div>
+  </div>
+</main>
+
+<div class="acessibilidade" style="text-align:center; margin: 20px 0;">
+  <button onclick="aumentarFonte()">Aumentar Fonte</button>
+  <button onclick="diminuirFonte()">Diminuir Fonte</button>
+  <button onclick="alternarContraste()">Alternar Contraste</button>
+</div>
+
+<footer>
+  <p>© 2025 Team EGG</p>
+</footer>
+
+<script src="../js/script.js"></script>
+
+<script>
+  const pages = [
+    'index.html',
+    'ajuda.html',
+    'dicas.html',
+    'iniciar.html',
+    'contato.html',
+    'faq.html',
+    'integrantes.html',
+    'solucao.html'
+  ];
+
+  const currentPage = window.location.pathname.split('/').pop();
+  let currentIndex = pages.indexOf(currentPage);
+
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      window.location.href = pages[currentIndex - 1];
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < pages.length - 1) {
+      window.location.href = pages[currentIndex + 1];
+    }
+  });
+
+  if (currentIndex === 0) {
+    prevBtn.disabled = true;
+  }
+
+  if (currentIndex === pages.length - 1) {
+    nextBtn.disabled = true;
+  }
+</script>
+
+</body>
+</html>

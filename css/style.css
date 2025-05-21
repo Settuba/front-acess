@@ -1,0 +1,274 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eaf7fb, #d4f1fa);
+  color: #243746;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho e menu */
+header {
+  background-color: #039BE5; /* Azul claro inspirado no botão */
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #0288D1;
+}
+
+/* Container principal */
+.container {
+  flex: 1;
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+/* Caixa de conteúdo com fundo branco e sombra leve */
+.content-box {
+  background-color: rgba(255, 255, 255, 0.97);
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Títulos */
+.content-box h1 {
+  margin-bottom: 25px;
+  font-size: 2.8rem;
+  color: #0277BD;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Parágrafos e listas */
+.content-box p,
+.content-box dl,
+.content-box ul {
+  font-size: 1.15rem;
+  color: #243746;
+  margin-bottom: 18px;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-box dl dt {
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.content-box dl dd {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.content-box ul {
+  list-style: disc inside;
+}
+
+/* Links */
+.content-box a {
+  color: #0277BD;
+  text-decoration: none;
+}
+
+.content-box a:hover {
+  text-decoration: underline;
+}
+
+/* Acessibilidade: área dos botões */
+.acessibilidade {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.acessibilidade button {
+  background-color: #039BE5;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  margin: 0 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.acessibilidade button:hover {
+  background-color: #0288D1;
+}
+
+/* Rodapé */
+footer {
+  background-color: #0288D1;
+  color: white;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilo para as imagens e integrantes */
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.member {
+  flex: 1 1 220px;
+  max-width: 260px;
+  text-align: center;
+}
+
+.member img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.member img:hover {
+  transform: scale(1.05);
+}
+
+.member h3 {
+  font-size: 1.4rem;
+  color: #0277BD;
+  margin-bottom: 5px;
+}
+
+.member p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Ajustes para modo alto contraste */
+body.high-contrast {
+  background: black;
+  color: yellow;
+}
+
+body.high-contrast header {
+  background-color: #000;
+}
+
+body.high-contrast nav ul li a {
+  color: yellow;
+}
+
+body.high-contrast nav ul li a:hover,
+body.high-contrast nav ul li a.active {
+  background-color: yellow;
+  color: black;
+}
+
+body.high-contrast .content-box {
+  background-color: black;
+  color: yellow;
+  box-shadow: 0 0 8px yellow;
+}
+
+body.high-contrast a {
+  color: yellow;
+}
+
+body.high-contrast .acessibilidade button {
+  background-color: yellow;
+  color: black;
+}
+
+body.high-contrast footer {
+  background-color: #000;
+  color: yellow;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member {
+    max-width: 100%;
+  }
+}
+.navigation-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navigation-buttons button {
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-buttons button:hover {
+  background-color: #1565c0;
+}
+
+body.high-contrast .navigation-buttons button {
+  background-color: yellow;
+  color: black;
+}
+.logo-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo-hc {
+  max-width: 180px;
+  height: auto;
+  margin-top: 10px;
+}
